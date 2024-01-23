@@ -22,6 +22,7 @@ func (w *logWriter) WriteString(s string) (int, error) {
 
 func (w *logWriter) WriteHeader(statusCode int) {
 	w.status = statusCode
+	w.ResponseWriter.WriteHeader(statusCode)
 }
 
 func (w *logWriter) Status() int {

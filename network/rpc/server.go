@@ -53,6 +53,10 @@ func (s *Server) WithStatsHandler(handlers ...stats.Handler) {
 	}
 }
 
+func (s *Server) WithRegistry(r registry.Registry) {
+	s.registry = r
+}
+
 func (s *Server) register() {
 	if s.config.SkipRegistry || s.registry == nil {
 		return
